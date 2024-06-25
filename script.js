@@ -22,6 +22,7 @@ showIcedCoffee();
 async function showIcedCoffee() {
   const resp = await fetch(`https://api.sampleapis.com/coffee/iced`);
   const data = await resp.json();
+
   console.log(data);
   let output = ``;
   result.innerHtml = "";
@@ -32,3 +33,18 @@ async function showIcedCoffee() {
   title.innerText = "ICED coffee selection";
   result.innerHTML = output;
 }
+
+//retrieving each hot coffee description
+
+const description = document.getElementById("description");
+data.forEach((each) => {
+  output += `<li data-description="${each.description}">${each.title}</li>`;
+});
+
+result.innerHTML = output;
+
+result.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    description.innerText = event.target.getAttribute("data-description");
+  }
+});
