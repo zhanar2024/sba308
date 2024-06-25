@@ -8,8 +8,7 @@ For this project the following files were created:
 1) index.html // for overall structureof the web application
 2) style.css  // for design of the elements of the web application
 3) script.js  // primary js file for scripting the functions
-4) api.js // js file dedicated for api related scripts
-5) ui.js //  js file dedicated for ui related scripts
+
 
    
 
